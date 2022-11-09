@@ -14,6 +14,9 @@ body{
   margin: 0; 
   flex-direction: column;
   background-color: var(--white);
+  > main{
+    min-height: calc(100vh - 400px);
+  }
 }
 
 hr{
@@ -26,4 +29,12 @@ hr{
     align-self: center;
   }
 
+}
+
+@media (min-width: 1200px){
+  body{
+    > main{
+      min-height: calc(100vh - 341px);
+    }
+  }
 }
