@@ -285,6 +285,98 @@ header.page-title hr {
   margin: var(--space);
   width: calc(100% - calc(var(--space) * 2));
 }
+.page aside, .page aside.open {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  bottom: 80px;
+  height: 50px;
+  background-color: var(--gray-12);
+  border-bottom: var(--gray-3) 1px solid;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+.page aside header, .page aside.open header {
+  font-size: 2em;
+  color: var(--dark-0);
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.page aside section, .page aside.open section {
+  padding: 0 var(--space);
+  display: none;
+  flex: 1;
+  max-height: calc(100vh - 339px);
+  overflow: auto;
+}
+.page aside section table, .page aside.open section table {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: var(--gray-3) 1px solid;
+}
+.page aside section table td, .page aside.open section table td {
+  padding: var(--space) 0;
+  border-top: var(--gray-3) 1px solid;
+}
+.page aside section table td.price, .page aside.open section table td.price {
+  text-align: right;
+}
+.page aside footer, .page aside.open footer {
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  font-size: 18px;
+  color: var(--dark-0);
+}
+.page aside footer .total, .page aside.open footer .total {
+  font-weight: bold;
+  margin-left: var(--space);
+  text-align: right;
+}
+.page aside footer button, .page aside.open footer button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  color: var(--black);
+  min-width: 50px;
+  width: 50px;
+}
+.page aside footer button:hover, .page aside.open footer button:hover {
+  background-color: var(--black-10);
+}
+.page aside footer button:active, .page aside.open footer button:active {
+  background-color: var(--black-75);
+}
+.page aside footer button svg, .page aside.open footer button svg {
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.page aside.open, .page aside.open.open {
+  height: calc(100vh - 158px);
+}
+.page aside.open header, .page aside.open section, .page aside.open.open header, .page aside.open.open section {
+  display: flex;
+}
+.page aside.open footer button svg, .page aside.open.open footer button svg {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
 .page > header {
   width: 100%;
   min-height: 130px;
@@ -298,6 +390,11 @@ header.page-title hr {
   font-size: 23px;
   font-weight: bold;
   text-transform: uppercase;
+}
+.page > header h1 small {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
 }
 .page > main {
   flex-direction: column;
@@ -463,6 +560,33 @@ header.page-title hr {
   }
   .page > header h1 {
     font-size: 32px;
+  }
+  .page aside {
+    width: 300px;
+    height: calc(100vh - 118px);
+    bottom: 0;
+    z-index: 4;
+  }
+  .page aside header, .page aside section {
+    display: flex;
+  }
+  .page aside header {
+    height: 160px;
+  }
+  .page aside footer {
+    height: 80px;
+  }
+  .page aside footer > div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+  }
+  .page aside footer > div .total {
+    font-size: 29px;
+  }
+  .page aside footer > div button {
+    display: none;
   }
   .page footer.fixed {
     justify-content: flex-start;
@@ -1496,24 +1620,102 @@ header.page-title hr {
 .page .options label .content .price {
   font-weight: 600;
 }
-.page aside {
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  right: 0;
-  bottom: 80px;
-  height: 50px;
-  background-color: var(--gray-12);
-  border-bottom: var(--gray-3) 1px solid;
-  flex-direction: column;
-  transition: all 0.2s ease-in-out;
+
+#schedules-summary form {
+  margin-top: var(--space);
 }
-.page aside header {
-  font-size: 2em;
-  color: var(--dark-0);
-  height: 130px;
-  justify-content: center;
+
+#schedules-payment {
+  position: relative;
+}
+#schedules-payment > header {
+  height: 260px;
+  min-height: 260px;
+  position: relative;
+}
+#schedules-payment > header h1 {
   display: none;
+}
+#schedules-payment > main {
+  align-items: center;
+}
+#schedules-payment > main form {
+  max-width: 100%;
+}
+#schedules-payment > main form .form-creditcard {
+  margin-top: var(--space);
+}
+#schedules-payment > main form .form-creditcard .form-fields {
+  flex-direction: column;
+  width: 100%;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields {
+  justify-content: space-between;
+  flex-direction: row;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields .field {
+  width: calc(50% - calc(var(--space) /2));
+}
+#schedules-payment > main form .form-creditcard .form-card {
+  position: absolute;
+  top: 32px;
+  width: 100%;
+  left: 0;
+  justify-content: center;
+  perspective: 1000px;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  width: 300px;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+  transform: rotateY(180deg);
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg {
+  width: 300px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg.back .name {
+  text-transform: uppercase;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces .back {
+  transform: rotateY(180deg);
+}
+
+@media (min-width: 1200px) {
+  #schedules-payment {
+    position: static;
+  }
+  #schedules-payment > header {
+    height: 160px;
+    min-width: 160px;
+  }
+  #schedules-payment > header h1 {
+    display: block;
+  }
+  #schedules-payment > main {
+    align-items: flex-start;
+  }
+  #schedules-payment > main form {
+    max-width: 900px;
+    justify-content: space-between;
+  }
+  #schedules-payment > main form .form-creditcard .form-card {
+    position: static;
+    justify-content: center;
+    padding-left: var(--space);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces {
+    width: 100%;
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+    transform: translate(-76px) rotateY(180deg);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces svg {
+    width: 340px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
