@@ -1,3 +1,5 @@
+import { fnCloseMenu } from "./utils/function.js";
+
 const title = "Bem vindo ao curso de JavaScript + TypeScript";
 
 window.onload = (e)=>{
@@ -18,23 +20,11 @@ if(body){
     });
   }
   if(closeMenu){
-    closeMenu.forEach((el)=>{
-      el.addEventListener("click", (e)=>{
-        e.preventDefault();
-        e.stopPropagation();
-        body.classList.remove("open-menu");
-      })    
-    })
+    fnCloseMenu(closeMenu, true)
   }
 
   if(menuLinks){
-    menuLinks.forEach((el)=>{
-      el.addEventListener("click", (e)=>{
-        e.preventDefault();
-        e.stopPropagation();
-        body.classList.remove("open-menu");
-      })    
-    })
+    fnCloseMenu(menuLinks)
   }
   
 }
