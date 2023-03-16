@@ -1,0 +1,21 @@
+[debug] [2023-03-15T23:40:27.875Z] ----------------------------------------------------------------------
+[debug] [2023-03-15T23:40:27.877Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bruno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-03-15T23:40:27.878Z] CLI Version:   11.24.1
+[debug] [2023-03-15T23:40:27.878Z] Platform:      win32
+[debug] [2023-03-15T23:40:27.878Z] Node Version:  v18.12.0
+[debug] [2023-03-15T23:40:27.879Z] Time:          Wed Mar 15 2023 20:40:27 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2023-03-15T23:40:27.879Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-15T23:40:27.887Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-15T23:40:27.887Z] > authorizing via signed-in user (brunogfvot@hotmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  W:\wamp64\www\hcode\WebStarter\ferrari
+
