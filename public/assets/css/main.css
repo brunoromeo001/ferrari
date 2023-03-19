@@ -797,9 +797,11 @@ header.page-title hr {
 #header .menu nav ul {
   margin: 0;
   padding: 0;
-  margin-top: 249px;
-  width: 100px;
+  width: 100%;
   flex-direction: column;
+  margin-top: 169px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
 }
 #header .menu nav ul li {
   padding: 14px 0;
